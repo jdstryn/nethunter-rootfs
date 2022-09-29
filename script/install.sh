@@ -78,6 +78,7 @@ permission() {
         mv -f user.sh $PREFIX/var/lib/proot-distro/installed-rootfs/nethunter/root/user.sh
         chmod +x $PREFIX/var/lib/proot-distro/installed-rootfs/nethunter/root/user.sh
     fi
+    echo "kali ALL=(ALL:ALL) ALL" >> $PREFIX/var/lib/proot-distro/installed-rootfs/nethunter/etc/sudoers.d/kali
     echo "proot-distro login nethunter --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" > $PREFIX/bin/nethunter
     if [[ -e "$PREFIX/bin/nethunter" ]]; then
         chmod +x $PREFIX/bin/nethunter
