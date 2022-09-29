@@ -34,7 +34,7 @@ package() {
 
 script() {
     termux-reload-settings
-    echo -e "\n${R} [${W}-${R}]${G} Downloading Installer Script..."${W}
+    echo -e "\n${R} [${W}-${R}]${C} Downloading Installer Script..."${W}
     wget https://raw.githubusercontent.com/jdstryn/modded-nethunter/master/distro-plugins/nethunter.sh
     mv -f nethunter.sh $PREFIX/etc/proot-distro/nethunter.sh
     chmod +x $PREFIX/etc/proot-distro/*.sh
