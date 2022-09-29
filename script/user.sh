@@ -36,8 +36,8 @@ login() {
     echo "proot-distro login --user ${user} nethunter --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" > /data/data/com.termux/files/usr/bin/nethunter
     clear
     echo
-    echo -e "\n${R} [${W}-${R}]${G} Restart your Termux & Type ${C}nethunter to login as root,"${W}
-    echo -e "\n${R} [${W}-${R}]${G} And then type su - ${user} to login as non-root user"${W}
+    echo -e "\n${R} [${W}-${R}]${G} Restart your Termux & Type ${C}nethunter,"${W}
+    echo -e "\n${R} [${W}-${R}]${G} And then type sudo su to login as root"${W}
     echo
 }
 
