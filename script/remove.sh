@@ -16,8 +16,8 @@ banner() {
 
 package() {
     echo -e "${R} [${W}-${R}]${C} Purging packages..."${W}
-    proot-distro remove ubuntu && proot-distro clear-cache
-    rm -rf $PREFIX/bin/ubuntu
+    proot-distro remove nethunter && proot-distro clear-cache
+    rm -rf $PREFIX/bin/nethunter
     sed -i 's/pulseaudio/#pulseaudio/g' ~/.sound
     sed -i 's/pacmd/#pacmd/g' ~/.sound
     echo -e "${R} [${W}-${R}]${C} Purging Completed !"${W}

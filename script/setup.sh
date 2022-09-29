@@ -37,8 +37,8 @@ script() {
     termux-reload-settings
     if [[ -d "$PREFIX/etc/proot-distro/nethunter.sh" ]]; then
         echo -e "\n${R} [${W}-${R}]${G} Script already installed."${W}
-        exit 0
     else
+        echo -e "\n${R} [${W}-${R}]${G} Downloading Installer Script..."${W}
         wget https://raw.githubusercontent.com/jdstryn/modded-nethunter/master/distro-plugins/nethunter.sh
         mv -f nethunter.sh $PREFIX/etc/proot-distro/nethunter.sh
         chmod +x $PREFIX/etc/proot-distro/*.sh
