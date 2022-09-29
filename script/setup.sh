@@ -27,12 +27,18 @@ package() {
                 apt update -y
                 apt upgrade -y
                 apt install "$hulu" -y
-                wget https://raw.githubusercontent.com/jdstryn/modded-nethunter/master/distro-plugins/nethunter.sh
-                mv -f nethunter.sh $PREFIX/etc/proot-distro/nethunter.sh
-                chmod +x $PREFIX/etc/proot-distro/*.sh
             }
         done
     fi
+}
+
+script() {
+    termux-reload-settings
+    echo -e "\n${R} [${W}-${R}]${G} Downloading Installer Script..."${W}
+    wget https://raw.githubusercontent.com/jdstryn/modded-nethunter/master/distro-plugins/nethunter.sh
+    mv -f nethunter.sh $PREFIX/etc/proot-distro/nethunter.sh
+    chmod +x $PREFIX/etc/proot-distro/*.sh
+    termux-reload-settings
 }
 
 distro() {
@@ -91,6 +97,7 @@ permission() {
 
 banner
 package
+script
 distro
 sound
 permission
