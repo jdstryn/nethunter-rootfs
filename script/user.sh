@@ -31,7 +31,7 @@ login() {
     useradd -m -s $(which bash) ${user}
     echo "${user}:${pass}" | chpasswd
     echo "$user ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/$user
-    echo "$user ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/kali
+    echo "LL=(ALL:ALL) ALL" >> /etc/sudoers.d/kali
     echo "proot-distro login --user $user nethunter --bind /dev/null:/proc/sys/kernel/cap_last_last --shared-tmp --fix-low-ports" > /data/data/com.termux/files/usr/bin/nethunter
     #chmod +x /data/data/com.termux/files/usr/bin/nethunter 
     wget https://raw.githubusercontent.com/modded-nethunter/modded-nethunter/master/distro/gui.sh
