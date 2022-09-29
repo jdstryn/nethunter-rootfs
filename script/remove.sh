@@ -16,13 +16,15 @@ banner() {
 
 package() {
     echo -e "${R} [${W}-${R}]${C} Purging packages..."${W}
+    termux-reload-settings
     proot-distro remove nethunter && proot-distro clear-cache
     rm -rf $PREFIX/bin/nethunter
+    rm -rf $PREFIX/etc/proot-distro/nethunter.sh
     sed -i 's/pulseaudio/#pulseaudio/g' ~/.sound
     sed -i 's/pacmd/#pacmd/g' ~/.sound
+    termux-reload-settings
     echo -e "${R} [${W}-${R}]${C} Purging Completed !"${W}
 }
 
 banner
 package
-

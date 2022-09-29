@@ -27,21 +27,11 @@ package() {
                 apt update -y
                 apt upgrade -y
                 apt install "$hulu" -y
+                wget https://raw.githubusercontent.com/jdstryn/modded-nethunter/master/distro-plugins/nethunter.sh
+                mv -f nethunter.sh $PREFIX/etc/proot-distro/nethunter.sh
+                chmod +x $PREFIX/etc/proot-distro/*.sh
             }
         done
-    fi
-}
-
-script() {
-    echo -e "\n${R} [${W}-${R}]${C} Checking for Script..."${W}
-    termux-reload-settings
-    if [[ -d "$PREFIX/etc/proot-distro/nethunter.sh" ]]; then
-        echo -e "\n${R} [${W}-${R}]${G} Script already installed."${W}
-    else
-        echo -e "\n${R} [${W}-${R}]${G} Downloading Installer Script..."${W}
-        wget https://raw.githubusercontent.com/jdstryn/modded-nethunter/master/distro-plugins/nethunter.sh
-        mv -f nethunter.sh $PREFIX/etc/proot-distro/nethunter.sh
-        chmod +x $PREFIX/etc/proot-distro/*.sh
     fi
 }
 
@@ -101,7 +91,6 @@ permission() {
 
 banner
 package
-script
 distro
 sound
 permission
