@@ -34,9 +34,9 @@ package() {
 
 script() {
     termux-reload-settings
-    echo -e "\n${R} [${W}-${R}]${C} Downloading Installer Script..."${W}
-    wget https://raw.githubusercontent.com/jdstryn/modded-nethunter/master/distro-plugins/nethunter.sh
-    mv -f nethunter.sh $PREFIX/etc/proot-distro/nethunter.sh
+    echo -e "\n${R} [${W}-${R}]${C} Setup Installer Script..."${W}
+    rm -f $PREFIX/etc/proot-distro/nethunter.sh
+    cp -f $HOME/nethunter-rootfs/distro-plugins/nethunter.sh $PREFIX/etc/proot-distro/nethunter.sh
     chmod +x $PREFIX/etc/proot-distro/*.sh
     termux-reload-settings
 }
@@ -74,7 +74,7 @@ permission() {
     if [[ -e "$PREFIX/var/lib/proot-distro/installed-rootfs/nethunter/root/user.sh" ]]; then
         chmod +x $PREFIX/var/lib/proot-distro/installed-rootfs/nethunter/root/user.sh
     else
-        wget https://raw.githubusercontent.com/jdstryn/modded-nethunter/master/script/user.sh
+        wget https://raw.githubusercontent.com/jdstryn/nethunter-rootfs/master/script/user.sh
         mv -f user.sh $PREFIX/var/lib/proot-distro/installed-rootfs/nethunter/root/user.sh
         chmod +x $PREFIX/var/lib/proot-distro/installed-rootfs/nethunter/root/user.sh
     fi

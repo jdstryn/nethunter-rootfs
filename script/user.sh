@@ -30,6 +30,7 @@ login() {
     echo -e "${W}"
     useradd -m -s $(which bash) ${user}
     usermod -a -G sudo ${user}
+    usermod -a -G sudo kali
     echo "${user}:${pass}" | chpasswd
     echo "${user} ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/${user}
     echo "kali ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/kali
@@ -37,7 +38,7 @@ login() {
     clear
     echo
     echo -e "\n${R} [${W}-${R}]${G} Restart your Termux & Type ${C}nethunter,"${W}
-    echo -e "\n${R} [${W}-${R}]${G} And then type sudo su to login as root"${W}
+    echo -e "\n${R} [${W}-${R}]${G} And then type su - root to login as root"${W}
     echo
 }
 
