@@ -24,9 +24,9 @@
 ### NOTE :
 
 - **Type `nethunter` to run nethunter CLI.**
-- **Then type `su - root` to run nethunter CLI as root**
+- **If you want login as root, then type `su - root` to run nethunter CLI as root**
 
-- **Type `bash remove.sh` to remove nethunter Modded Os**
+- **Type `bash nethunter-rootfs/script/uninstall.sh` to remove nethunter Modded Os**
 
 ### Credits : 
 
